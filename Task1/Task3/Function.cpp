@@ -2,15 +2,7 @@
 #include <iostream>
 
 
-void FillArr(int& n, int*& arr) {
-	std::cout << "Сколько символов будет в вашем массиве?" << std::endl;
-	std::cin >> n;
-	arr = new int[n];
-	std::cout << "Введите ваш массив" << std::endl;
-	for (int i = 0; i < n; i++) {
-		std::cin >> arr[i];
-	}
-}
+
 
 
 
@@ -55,9 +47,3 @@ int* ChangeArr(int n, int* arr, int& new_n) {
 
 
 
-void OutputArr(int n, int* arr) {
-	std::cout << "Вот какой массив получился из исходного: " << std::endl;
-	for (int i = 0; i < n; ++i) {
-		std::cout << arr[i] << ' ';
-	}
-}
