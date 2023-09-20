@@ -17,23 +17,43 @@ namespace Vec {
 		y = y_;
 		z = z_;
 	}
+
+	TVector:: TVector(const TVector& vec) {
+		x = vec.x;
+		y = vec.y;
+		z = vec.z;
+	}
+
+
 	TVector TVector:: operator + (const TVector& vec) {
 		return TVector(x + vec.x, y + vec.y, z + vec.z);
 
 	}
+
 	TVector TVector:: operator - (const TVector& vec) {
 		return TVector(x - vec.x, y - vec.y, z - vec.z);
 	}
 	float TVector::  operator * (const TVector& vec) {
 		return (x * vec.x + y * vec.y + z * vec.z);
 	}
-	float TVector::Length() {
+
+	const TVector& TVector:: operator = (TVector& vec) {
+		return TVector(vec.x, vec.y, vec.z);	
+	}
+
+
+
+	const float TVector::Length() {
 		return (sqrt(x * x + y * y + z * z));
 	}
-	float TVector::Cos(TVector& vec) {
+	const float TVector::Cos(TVector& vec) {
 		float a = this->operator*(vec);
 		float b = this->Length() * vec.Length();
 		return (a / b);
 	}
 
+	
+	
+
+	
 }
