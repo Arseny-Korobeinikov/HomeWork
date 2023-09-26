@@ -35,7 +35,7 @@ struct Student {
 		stream << obj.Patronymic << endl;
 		stream << obj.data << endl;
 		stream << obj.pN << endl;
-		
+
 		return stream;
 	}
-};
+}; 

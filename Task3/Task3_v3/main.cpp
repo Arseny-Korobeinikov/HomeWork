@@ -9,7 +9,7 @@ int main() {
 		a.FillGroupFromFile("data.txt");
 		cout << a;
 	}
-	catch(const char* exp){
+	catch (const char* exp) {
 		cout << exp;
 	}
 

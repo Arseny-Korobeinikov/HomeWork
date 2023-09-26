@@ -6,7 +6,7 @@ private:
 	int size;
 	int maxsize;
 	const int step = 10;
-	Student** students;
+	Student* students;
 public:
 	Group();
 	Group(int size_);
@@ -31,10 +31,12 @@ public:
 		stream << "Группа студентов:" << endl;
 		for (int i = 0; i < obj.size; ++i) {
 			stream << i + 1 << '.';
-			stream << *(obj.students[i]);
+			stream << (obj.students[i]);
 		}
 		return stream;
 	}
 
+
+
 	void resize();
-};
+}; 

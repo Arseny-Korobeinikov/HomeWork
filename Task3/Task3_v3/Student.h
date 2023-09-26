@@ -7,6 +7,13 @@ struct DateB {
 	int month;
 	int year;
 
+	DateB() {};
+	DateB operator = (const DateB& obj) {
+		day = obj.day;
+		month = obj.month;
+		year = obj.year;
+	}
+
 	bool operator == (const DateB& d)const {
 		if ((d.day == day) && (d.year == year) && (d.month == month)) {
 			return true;
@@ -14,6 +21,7 @@ struct DateB {
 		return false;
 	}
 
+	
 	friend ostream& operator << (ostream& stream, const DateB& obj) {
 		stream << obj.day << '.' << obj.month << '.' << obj.year;
 		return stream;
@@ -29,13 +37,25 @@ struct Student {
 	DateB data;
 	string pN;
 
+
+	Student() {};
+	Student(string name, string surname, string patronymic, DateB dat, string phone) {
+		Name = name;
+		Surname = surname;
+		Patronymic = patronymic;
+		data = dat;
+		pN = phone;
+	}
+
+
 	friend ostream& operator << (ostream& stream, const Student& obj) {
 		stream << obj.Name << endl;
 		stream << obj.Surname << endl;
 		stream << obj.Patronymic << endl;
 		stream << obj.data << endl;
 		stream << obj.pN << endl;
-		
+
 		return stream;
 	}
 };
+
