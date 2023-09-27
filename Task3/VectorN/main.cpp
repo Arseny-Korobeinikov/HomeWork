@@ -5,11 +5,13 @@
 
 int main() {	
 	setlocale(LC_ALL, "ru");
-	Vector<int> a (4), b(4);
+	Vector<int> a (3), b(3);
 	std::cout << "¬ведите координаты векторов а и b" << std::endl;
 	std:: cin >> a >> b;
-	a = a - b;
-	std::cout << a;
+
+	std::cout << a - b;
+	std::cout << a + b;
+
 
 	double p = a * b;
 	std::cout << p << std::endl;

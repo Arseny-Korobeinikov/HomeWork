@@ -7,7 +7,10 @@
 Group:: Group() {
 	size = 0;
 	maxsize = 10;
-	students = new Student* [0];
+	students = new Student* [10];
+	for (int i = 0; i < maxsize; i++) {
+		students[i] = new Student[1];
+	}
 }
 
 
@@ -15,6 +18,9 @@ Group::Group(int size_) {
 	size = size_;
 	maxsize = size + 10;
 	students = new Student* [maxsize];
+	for (int i = 0; i < maxsize; i++) {
+		students[i] = new Student[1];
+	}
 }
 
 
@@ -22,6 +28,9 @@ Group::Group(const Group& obj) {
 	size = obj.size;
 	maxsize = obj.maxsize;
 	students = new Student * [maxsize];
+	for (int i = 0; i < maxsize; i++) {
+		students[i] = new Student[1];
+	}
 	for (int i = 0; i < size; ++i) {
 		students[i] = obj.students[i];
 	}
@@ -35,11 +44,18 @@ Group::~Group() {
 
 
 //фукнция прочитать с файла
-void Group::FillGroupFromFile(const string& file_path) {
+Group:: Group(const string& file_path) {
 	ifstream file;
 	file.open(file_path);
 	if (!file.is_open()) {
 		throw "\nRead file error.\n";
+	}
+
+	size = 0;
+	maxsize = 10;
+	students = new Student * [10];
+	for (int i = 0; i < maxsize; i++) {
+		students[i] = new Student[1];
 	}
 
 	int i = 0;
@@ -112,7 +128,7 @@ void Group::Add(const Student& student) {
 
 //удаление студента
 void Group::Del(const Student& student) {
-	int index = searchSN(student.Surname);
+	int index = searchP(student.pN);
 	Student* tmp = NULL;
 	for (int i = index; i < size; ++i) {
 		tmp = students[i + 1];
@@ -201,3 +217,6 @@ void Group::resize() {
 
 
 
+Student Group::SetStudent(int i) {
+	return (*students[i-1]);
+}

@@ -7,11 +7,16 @@ struct DateB {
 	int month;
 	int year;
 
-	DateB() {};
+	DateB() {
+		day = 0;
+		month = 0;
+		year = 0;
+	}
 	DateB operator = (const DateB& obj) {
 		day = obj.day;
 		month = obj.month;
 		year = obj.year;
+		return (*this);
 	}
 
 	bool operator == (const DateB& d)const {

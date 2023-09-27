@@ -7,12 +7,13 @@ private:
 	int maxsize;
 	const int step = 10;
 	Student** students;
+	void resize();
 public:
 	Group();
 	Group(int size_);
 	Group(const Group& obj);
 	~Group();
-	void FillGroupFromFile(const std::string& file_path);
+	Group(const std::string& file_path);
 
 	void Add(const Student& student);
 	Group operator + (const Student& student);
@@ -27,6 +28,8 @@ public:
 	void searchSNWithOut(string sn);
 	void searchWithOut(DateB d);
 
+	Student SetStudent(int i);
+
 	friend ostream& operator << (ostream& stream, const Group& obj) {
 		stream << "Группа студентов:" << endl;
 		for (int i = 0; i < obj.size; ++i) {
@@ -34,7 +37,5 @@ public:
 			stream << *(obj.students[i]);
 		}
 		return stream;
-	}
-
-	void resize();
+	}	
 };
