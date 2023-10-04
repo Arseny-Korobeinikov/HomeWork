@@ -11,14 +11,14 @@ int main() {
 		const DateB d (3, 4, 2011);
 		const Student stud("Artemiy","Korobeinikov","Petrovich", d,"+7-996-565-00-10");
 		const Student aaa("Ivan", "Tabunov", "Petrovich", d, "+7-996-565-00-00");
-		cout << stud <<"\n \n \n";
+		cout << "Какого студента хочу добавить \n" << stud << "\n \n \n";
 		a.Add(stud);
 		a.Add(aaa);
 		a.Add(aaa);
 
-		cout << a;
+		cout <<"Добавил Артемия и двух Вань, а получилось: \n" << a;
 		a.Del(a.SetStudent(2));
-		cout << a;
+		cout << ": Удалил второго студента и получилось: \n" << a;
 	}
 	catch (const char* exp) {
 		cout << exp;
