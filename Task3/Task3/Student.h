@@ -54,11 +54,11 @@ struct Student {
 
 	Student() {
 		DateB d(3, 4, 2111);
-		Name = "Art";
-		Surname = "Korob";
-		Patronymic = "Petr";
+		Name = "A";
+		Surname = "Korobeinikov";
+		Patronymic = "Petrovich";
 		data = d;
-		pN = "777777";
+		pN = "+7-996-565-00-10";
 	}
 
 	Student(const string& name, const string& surname, const string& patronymic, const DateB& dat, const string& phone) {

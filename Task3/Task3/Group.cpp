@@ -27,7 +27,7 @@ Group::Group(int size_) {
 Group::Group(const Group& obj) {
 	size = obj.size;
 	maxsize = obj.maxsize;
-	students = new Student * [maxsize];
+	students = new Student* [maxsize];
 	for (int i = 0; i < maxsize; i++) {
 		students[i] = new Student[1];
 	}
@@ -113,17 +113,19 @@ Group Group::operator + (const Student& student) {
 	return tmp;
 }
 
+
+
 void Group::Add(const Student& student) {
 	if (size == maxsize) {
 		resize();
 	}
 
-	size += 1;
 	students[size]->Name = student.Name;
 	students[size]->Surname = student.Surname;
 	students[size]->Patronymic = student.Patronymic;
 	students[size]->data = student.data;
 	students[size]->pN = student.pN;
+	size++;
 }
 
 //удаление студента

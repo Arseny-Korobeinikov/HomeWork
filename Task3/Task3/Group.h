@@ -18,6 +18,7 @@ public:
 	void Add(const Student& student);
 	Group operator + (const Student& student);
 
+
 	void Del(const Student& student);
 
 	int searchP(string number);
